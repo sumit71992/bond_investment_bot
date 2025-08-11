@@ -104,7 +104,7 @@ bot.onText(/\/start/, (msg) => {
 
 // Send daily message at 9:00 AM
 cron.schedule(
-  "35 14 * * *",
+  "45 14 * * *",
   () => {
     const now = new Date();
     const todayDay = String(now.getDate()); // today's date number
