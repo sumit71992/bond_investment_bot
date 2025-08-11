@@ -100,10 +100,10 @@ let msg =
 // Detect chat ID when user starts the bot
 bot.onText(/\/start/, (msg) => {
   chatId = msg.chat.id;
-  bot.sendMessage(chatId, msg);
+  bot.sendMessage(chatId, msg, { parse_mode: "HTML" });
 });
 bot.on("message", (msg) => {
-  bot.sendMessage(chatId, msg);
+  bot.sendMessage(chatId, msg, { parse_mode: "HTML" });
 });
 
 // Send daily message at 9:00 AM
