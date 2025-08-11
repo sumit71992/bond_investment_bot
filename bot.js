@@ -1,4 +1,5 @@
 import TelegramBot from "node-telegram-bot-api";
+import express from "express";
 import cron from "node-cron";
 import dotenv from "dotenv";
 dotenv.config();
@@ -146,3 +147,9 @@ cron.schedule(
     timezone: "Asia/Kolkata",
   }
 );
+
+const app = express();
+app.get("/", (req, res) => res.send("Bot is running"));
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server is listening");
+});
