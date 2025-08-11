@@ -14,7 +14,7 @@ const record = [
     name: "Navi May'25",
     price: 9911.39,
     quantity: 2,
-    date: "11",
+    date: "",
     interest: {
       30: 82.36,
       31: 85.1,
@@ -56,7 +56,7 @@ const record = [
     name: "U Gro Jun'25",
     price: 9853.8,
     quantity: 1,
-    date: "11",
+    date: "",
     interest: {
       30: 82.36,
       31: 85.1,
@@ -70,7 +70,7 @@ const record = [
     name: "Wint Capital Aug'25",
     price: 9986.9,
     quantity: 1,
-    date: "11",
+    date: "",
     interest: {
       30: 82.36,
       31: 85.1,
@@ -102,10 +102,13 @@ bot.onText(/\/start/, (msg) => {
   chatId = msg.chat.id;
   bot.sendMessage(chatId, msg);
 });
+bot.on("message", (msg) => {
+  bot.sendMessage(chatId, msg);
+});
 
 // Send daily message at 9:00 AM
 cron.schedule(
-  "45 14 * * *",
+  "0 6 * * *",
   () => {
     const now = new Date();
     const todayDay = String(now.getDate()); // today's date number
