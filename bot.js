@@ -102,7 +102,8 @@ bot.onText(/\/start/, (msg) => {
   chatId = msg.chat.id;
   bot.sendMessage(chatId, msg, { parse_mode: "HTML" });
 });
-bot.on("message", (msg) => {
+bot.on("message", (message) => {
+  console.log("rrr", message);
   bot.sendMessage(chatId, msg, { parse_mode: "HTML" });
 });
 
