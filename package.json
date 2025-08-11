@@ -5,7 +5,7 @@
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start bot.js"
+    "start": "nodemon bot.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "dotenv": "^17.2.1",
     "node-cron": "^4.2.1",
     "node-telegram-bot-api": "^0.66.0",
+    "nodemon": "^3.1.10",
     "pm2": "^6.0.8"
   }
 }
