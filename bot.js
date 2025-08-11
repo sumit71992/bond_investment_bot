@@ -7,7 +7,7 @@ dotenv.config();
 const token = process.env.TELEGRAM_KEY;
 const bot = new TelegramBot(token, { polling: true });
 
-let chatId = 664277377;
+let chatId = process.env.CHAT_ID;
 const record = [
   {
     name: "Navi May'25",
